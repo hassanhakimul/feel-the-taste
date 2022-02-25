@@ -8,7 +8,7 @@ const searchFood = () =>{
         const searchText = searchBox.value ;
         //clear data
         searchBox.value = '';
-        document.getElementById('error-msg').style.display = 'none';
+        // document.getElementById('error-msg').style.display = 'none';
         //load data
        const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`
       fetch(url)
