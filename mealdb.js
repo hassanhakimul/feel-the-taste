@@ -10,11 +10,21 @@ const searchFood = () =>{
         searchBox.value = '';
         // document.getElementById('error-msg').style.display = 'none';
         //load data
-       const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`
-      fetch(url)
-      .then(res => res.json())
-      .then(data => displayMeals(data.meals))
-}
+        if(searchText == ''){
+        alert('please try again later ')
+    }
+//jodi user num dai tar error handeling
+    else if(!isNaN(searchText)){
+            alert('please try again later ')
+        }
+        
+        else{
+            const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`
+            fetch(url)
+            .then(res => res.json())
+            .then(data => displayMeals(data.meals))
+        }
+    }
 const displayMeals = meals =>{
     console.log(meals)
     const foods = document.getElementById('foods')
